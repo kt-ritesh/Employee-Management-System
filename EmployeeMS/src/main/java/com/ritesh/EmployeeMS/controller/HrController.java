@@ -1,6 +1,5 @@
 package com.ritesh.EmployeeMS.controller;
 
-import com.ritesh.EmployeeMS.model.Designation;
 import com.ritesh.EmployeeMS.model.Employee;
 import com.ritesh.EmployeeMS.service.EmployeeService;
 import com.ritesh.EmployeeMS.service.ReportService;
@@ -37,7 +36,7 @@ public class HrController {
     }
 
     @PutMapping("promotion")
-    public String promotion(@RequestParam Designation PromotedDesignation, @RequestParam Long empId){
+    public String promotion(@RequestParam String PromotedDesignation, @RequestParam Long empId){
         return employeeService.promotion(PromotedDesignation, empId);
     }
 

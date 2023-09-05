@@ -23,8 +23,7 @@ public class Employee {
     @Column(unique = true)
     private String empEmail;
     private String empAddress;
-    @Enumerated(EnumType.STRING)
-    private Designation empDesignation;
+    private String empDesignation;
     @Column(nullable = false)
     private Double empSalary;
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)

@@ -1,13 +1,11 @@
 package com.ritesh.EmployeeMS.service;
 
-import com.ritesh.EmployeeMS.model.Designation;
 import com.ritesh.EmployeeMS.model.Employee;
 import com.ritesh.EmployeeMS.repository.IEmployeeRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Optional;
 
 @Service
 public class EmployeeService {
@@ -41,9 +39,9 @@ public class EmployeeService {
         return "Salary has been increased by "+increasePercent+"%.";
     }
 
-    public String promotion(Designation promotedDesignation, Long empId) {
+    public String promotion(String promotedDesignation, Long empId) {
         Employee existingEmp = iEmployeeRepo.getReferenceById(empId);
-        Designation prevDesi = existingEmp.getEmpDesignation();
+        String prevDesi = existingEmp.getEmpDesignation();
         existingEmp.setEmpDesignation(promotedDesignation);
         iEmployeeRepo.save(existingEmp);
 
